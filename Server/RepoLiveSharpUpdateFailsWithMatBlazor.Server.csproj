@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LiveSharp" Version="1.5.49" />
+    <PackageReference Include="LiveSharp" Version="1.5.53" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.6" />
   </ItemGroup>
