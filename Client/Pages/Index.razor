@@ -5,3 +5,21 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<textarea value="@AssemblyString"></textarea>
+
+@code {
+    public string AssemblyString { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+            .OrderBy(x => x.FullName)
+            .ToArray();
+        var assemblyInfos = assemblies
+
+            .Select(x => $"{x.FullName}")
+            .ToArray();
+
+        AssemblyString = string.Join("\r\n", assemblyInfos);
+    }
+}

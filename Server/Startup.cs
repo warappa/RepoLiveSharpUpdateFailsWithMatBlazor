@@ -1,12 +1,8 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
-using MatBlazor;
 
 namespace RepoLiveSharpUpdateFailsWithMatBlazor.Server
 {
@@ -26,9 +22,6 @@ namespace RepoLiveSharpUpdateFailsWithMatBlazor.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
-
-            // just to be sure the assembly is loaded
-            var b = typeof(MatButton);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +31,11 @@ namespace RepoLiveSharpUpdateFailsWithMatBlazor.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();
+                app.UseCors(options => options
+                    .SetIsOriginAllowed(x => true)
+                    .AllowAnyHeader()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
             }
             else
             {
