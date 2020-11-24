@@ -4,16 +4,17 @@
 		<TargetFramework>net5.0</TargetFramework>
     <BlazorCacheBootResources>false</BlazorCacheBootResources>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-
+		<PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="LiveSharp" Version="1.6.25" />
+		<PackageReference Include="LiveSharp" Version="1.6.33" />
 		<PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.0" />
 		<!--<PackageReference Include="MatBlazor" Version="2.7.0" />-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.0" />
+		<!--<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.3" />-->
 		<PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
 	</ItemGroup>
 
