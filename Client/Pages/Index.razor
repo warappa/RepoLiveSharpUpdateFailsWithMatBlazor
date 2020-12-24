@@ -8,8 +8,6 @@ Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
-@Forecast.TemperatureC
-
 <textarea style="width: 900px;height: 300px" value="@TypesString"></textarea>
 <textarea style="width: 900px;height: 300px" value="@AssemblyString"></textarea>
 
@@ -17,13 +15,10 @@ Welcome to your new app.
 @code {
     public string AssemblyString { get; set; }
     public string TypesString { get; set; }
-    public WeatherForecast Forecast { get;  set; } 
+    
     protected override async Task OnInitializedAsync()
     {
         Load();
-
-        Forecast = new WeatherForecast();
-        Forecast.TemperatureC = 10;
     }
 
     public void Load()
